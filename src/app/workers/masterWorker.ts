@@ -21,13 +21,12 @@ export class MasterWorker {
     else 
     {
       this.slaveRun();
-      this.logAppend();
     }
+
+    this.logAppend();
   }
 
   private masterRun(): void {   
-    console.log(`Master ${process.pid} is running`);
-
     var workerSize =  this.config.app.workerSize;
     
     if (workerSize > os.cpus().length) {
@@ -50,8 +49,12 @@ export class MasterWorker {
     let slave = new SlaveWorker();
     slave.start(this.config);
   }
+
   private logAppend() {
-    console.log(`Worker ${process.pid} started`);
+    if (cluster.isMaster) 
+      console.log(`Master ${process.pid} is running`);
+    else
+      console.log(`Worker ${process.pid} started`);
   }
 
 }

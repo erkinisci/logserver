@@ -22,3 +22,7 @@
 {"name":"logger","hostname":"DESKTOP-79B12RB","pid":19620,"level":30,"msg":"app started","time":"2017-11-07T12:28:25.052Z","v":0}
 {"name":"logger","hostname":"DESKTOP-79B12RB","pid":10344,"level":30,"msg":"app started","time":"2017-11-07T12:28:25.075Z","v":0}
 {"name":"logger","hostname":"DESKTOP-79B12RB","pid":17784,"level":30,"msg":"app started","time":"2017-11-07T12:28:25.095Z","v":0}
+{"name":"logger","hostname":"DESKTOP-79B12RB","pid":10804,"level":30,"msg":"app started","time":"2017-11-07T12:31:27.716Z","v":0}
+{"name":"logger","hostname":"DESKTOP-79B12RB","pid":17100,"level":30,"msg":"app started","time":"2017-11-07T12:31:27.720Z","v":0}
+{"name":"logger","hostname":"DESKTOP-79B12RB","pid":36236,"level":30,"msg":"app started","time":"2017-11-07T12:31:27.718Z","v":0}
+{"name":"logger","hostname":"DESKTOP-79B12RB","pid":17148,"level":30,"msg":"app started","time":"2017-11-07T12:31:27.731Z","v":0}
