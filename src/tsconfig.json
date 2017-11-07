@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "baseUrl": "",
+        "types": [
+            "node"
+        ],
+        "declaration": false,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "lib": [
+            "es2017",
+            "dom"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "../dist/",
+        "target": "es5",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "sourceMap": false,
+        "typeRoots": [
+            "../node_modules/@types"
+        ]
+    }
+}
