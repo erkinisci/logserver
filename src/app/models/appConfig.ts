@@ -1,8 +1,9 @@
 export interface AppConfig {
-  [key: string]: any;
-  app: AppTagConfig;
-  connection: ConnectionTagConfig;
-  database: DatabaseTagConfig;
+  [key: string]   : any;
+  app             : AppTagConfig;
+  connection      : ConnectionTagConfig;
+  file            : FileTagConfig;
+  database        : DatabaseTagConfig;
   databaseOptions : DatabaseOptionsTagConfig
 }
 
@@ -12,6 +13,10 @@ export interface AppTagConfig {
 
 export interface ConnectionTagConfig {
   port?: number;
+}
+
+export interface FileTagConfig{
+  main? : string
 }
 
 export interface DatabaseTagConfig {

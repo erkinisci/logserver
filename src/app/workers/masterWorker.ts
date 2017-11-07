@@ -7,8 +7,13 @@ import { AppConfig } from '../models/appConfig';
 
 export class MasterWorker {
  
-  start(): void {
+  config : AppConfig;
 
+  constructor(private _config : AppConfig) {
+    this.config = _config;   
+  }
+
+  start(): void {
     if (cluster.isMaster) 
     {
       this.masterRun();
@@ -20,33 +25,33 @@ export class MasterWorker {
     }
   }
 
-  private masterRun(): void {
+  private masterRun(): void {   
     console.log(`Master ${process.pid} is running`);
-    var config = ini.parse<AppConfig>(fs.readFileSync('./config.ini', 'utf-8'))
 
-    if (config.app.workerSize > os.cpus().length) {
-      throw 'Worker size error!';
+    var workerSize =  this.config.app.workerSize;
+    
+    if (workerSize > os.cpus().length) {
+      workerSize = os.cpus().length;
+      console.log(`Ideal Worker Size is seted as ${workerSize}.`);     
     }
-
-    var workserSize =  config.app.workerSize;
-    if(workserSize <= 0)
-      workserSize = 1;
+    else if(workerSize <= 0)
+      workerSize = 1;
        
-    for (let i = 0; i < workserSize; i++) {
-      cluster.fork({ config: JSON.stringify(config) });
+    for (let i = 0; i < workerSize; i++) {
+      cluster.fork();
     }
+
     cluster.on('exit', (worker, code, signal) => {
       console.log(`Worker ${worker.process.pid} died`);
-    });
+    });    
   }
 
   private slaveRun() {
-    let config = JSON.parse(process.env['config']);
     let slave = new SlaveWorker();
-    slave.start(config);
+    slave.start(this.config);
   }
-
   private logAppend() {
     console.log(`Worker ${process.pid} started`);
   }
+
 }
