@@ -1,6 +1,7 @@
 export interface AppConfig {
   [key: string]   : any;
   app             : AppTagConfig;
+  tokenizer       : TokenizerTagConfig;
   connection      : ConnectionTagConfig;
   file            : FileTagConfig;
   database        : DatabaseTagConfig;
@@ -13,6 +14,10 @@ export interface AppTagConfig {
 
 export interface ConnectionTagConfig {
   port?: number;
+}
+
+export interface TokenizerTagConfig{
+  payload : string;
 }
 
 export interface FileTagConfig{

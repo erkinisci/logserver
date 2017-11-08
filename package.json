@@ -25,7 +25,9 @@
   "author": "Erkin Isci",
   "license": "SEE LICENSE IN license.txt",
   "devDependencies": {
+    "@types/base64url": "^2.0.0",
     "@types/core-js": "^0.9.43",
+    "@types/jsonwebtoken": "^7.2.3",
     "@types/mssql": "^4.0.6",
     "@types/node": "^8.0.46",
     "pkg": "^4.2.5"
@@ -34,8 +36,10 @@
     "@types/bunyan": "^1.8.3",
     "@types/mysql": "^2.15.0",
     "@types/winston": "^2.3.7",
+    "base64url": "^2.0.0",
     "bunyan": "^1.8.12",
     "bunyan-mysql": "0.0.5",
+    "jsonwebtoken": "^8.1.0",
     "mssql": "^4.1.0",
     "mysql": "^2.15.0",
     "typings": "^2.1.1",
