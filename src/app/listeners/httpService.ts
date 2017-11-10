@@ -1,12 +1,12 @@
 import * as http from 'http';
 import * as router from 'router';
-import { Loggy } from '../loggies/loggy';
-import { ILogInfo } from '../models/iLogInfo';
-import { AppConfig } from '../models/appConfig';
 import * as bodyParser from 'body-parser';
 import * as finalHandler from 'finalhandler';
 import * as compression from 'compression';
 
+import { Loggy } from '../loggies/loggy';
+import { ILogInfo } from '../models/iLogInfo';
+import { AppConfig } from '../models/appConfig';
 import { ILogUser } from '../models/authentication/iLogUser';
 import { UserTokenGeneratorService } from '../services/userTokenGeneratorService';
 
