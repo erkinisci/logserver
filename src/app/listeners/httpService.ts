@@ -36,9 +36,7 @@ export class HttpService {
     
     api.post('/auth', function (req, res) {
      let logUser : ILogUser;
-     
-     console.log(req.body);     
-     
+         
      try{
         logUser = <ILogUser>req.body;       
       } catch (e){
@@ -47,8 +45,6 @@ export class HttpService {
 
       if(logUser != null){
         let token = self._authService.generate(logUser);
-        console.log(token);        
-       
         res.statusCode = 200;
         res.setHeader('Content-Type', 'text/plain; charset=utf-8');
         res.end(token + '\r\n');
@@ -66,19 +62,5 @@ export class HttpService {
     });
 
     server.listen(self._config.connection.port);
-  }
-
-  handler(req: http.IncomingMessage, res: http.ServerResponse) {
-    let self = this;
-    let rawData = '';
-
-    req.on('data', (chunk: string | Buffer) => {
-      rawData += chunk;    
-    });
-
-    req.on('end', () => {
-      res.end();     
-      self._loggy.log(rawData);
-    });    
   }
 }
